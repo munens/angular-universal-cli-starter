@@ -1,0 +1,1 @@
+web: ng build --prod && ng build --prod --app 1 --output-hashing=false && cpy ./server.js ./dist && cd dist && node server
