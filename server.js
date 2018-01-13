@@ -1,6 +1,6 @@
 require('zone.js/dist/zone-node');
 require('reflect-metadata');
-require('dot-env').config();
+require('dotenv').config();
 const express = require('express');
 const fs = require('fs');
 
@@ -16,7 +16,7 @@ const baseUrl = `http://localhost:${PORT}`;
 // setting the view engine for express to use:
 app.engine('html', ngExpressEngine({
 	bootstrap: AppServerModuleNgFactory
-}))
+}));
 
 // application settings to be used with express:
 app.set('view engine', 'html');
@@ -31,4 +31,4 @@ app.get('*', (req, res) => {
 
 app.listen(PORT, () => {
 	console.log(`app listening on port: ${PORT}`);
-})
+});
