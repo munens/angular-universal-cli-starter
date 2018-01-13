@@ -1,5 +1,6 @@
 require('zone.js/dist/zone-node');
 require('reflect-metadata');
+require('dot-env').config();
 const express = require('express');
 const fs = require('fs');
 
@@ -9,7 +10,7 @@ const { ngExpressEngine } = require('@nguniversal/express-engine');
 const { AppServerModuleNgFactory } = require('./dist-server/main.bundle');
 
 const app = express();
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 const baseUrl = `http://localhost:${PORT}`;
 
 // setting the view engine for express to use:
